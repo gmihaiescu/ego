@@ -17,6 +17,7 @@
 package org.overture.ego.model.dto;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NonNull;
 import org.springframework.data.domain.Page;
@@ -24,16 +25,17 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 @Getter
+@AllArgsConstructor
 public class PageDTO<T> {
 
   private final int limit;
-  private final int offset;
+  private final int page;
   private final long count;
   private final List<T> resultSet;
 
   public PageDTO(@NonNull final Page<T> page) {
     this.limit      = page.getSize();
-    this.offset     = page.getNumber();
+    this.page     = page.getNumber();
     this.count      = page.getTotalElements();
     this.resultSet  = page.getContent();
   }

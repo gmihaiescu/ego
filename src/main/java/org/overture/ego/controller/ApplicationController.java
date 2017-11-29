@@ -57,9 +57,9 @@ public class ApplicationController {
   @RequestMapping(method = RequestMethod.GET, value = "")
   @ApiImplicitParams({
           @ApiImplicitParam(name = "limit", dataType = "string", paramType = "query",
-                  value = "Results page you want to retrieve (0..N)"),
-          @ApiImplicitParam(name = "offset", dataType = "string", paramType = "query",
-                  value = "Target Page number"),
+            value = "Max number of results per page"),
+          @ApiImplicitParam(name = "page", dataType = "string", paramType = "query",
+            value = "Target page number (0..N)"),
           @ApiImplicitParam(name = "sort", dataType = "string", paramType = "query",
                   value = "Field to sort on"),
           @ApiImplicitParam(name = "sortOrder", dataType = "string", paramType = "query",
@@ -146,9 +146,9 @@ public class ApplicationController {
   @RequestMapping(method = RequestMethod.GET, value = "/{id}/users")
   @ApiImplicitParams({
           @ApiImplicitParam(name = "limit", dataType = "string", paramType = "query",
-                  value = "Results page you want to retrieve (0..N)"),
-          @ApiImplicitParam(name = "offset", dataType = "string", paramType = "query",
-                  value = "Target Page number"),
+            value = "Max number of results per page"),
+          @ApiImplicitParam(name = "page", dataType = "string", paramType = "query",
+            value = "Target page number (0..N)"),
           @ApiImplicitParam(name = "sort", dataType = "string", paramType = "query",
                   value = "Field to sort on"),
           @ApiImplicitParam(name = "sortOrder", dataType = "string", paramType = "query",
@@ -186,9 +186,9 @@ public class ApplicationController {
   @RequestMapping(method = RequestMethod.GET, value = "/{id}/groups")
   @ApiImplicitParams({
           @ApiImplicitParam(name = "limit", dataType = "string", paramType = "query",
-                  value = "Results page you want to retrieve (0..N)"),
-          @ApiImplicitParam(name = "offset", dataType = "string", paramType = "query",
-                  value = "Target Page number"),
+            value = "Max number of results per page"),
+          @ApiImplicitParam(name = "page", dataType = "string", paramType = "query",
+            value = "Target page number (0..N)"),
           @ApiImplicitParam(name = "sort", dataType = "string", paramType = "query",
                   value = "Field to sort on"),
           @ApiImplicitParam(name = "sortOrder", dataType = "string", paramType = "query",
