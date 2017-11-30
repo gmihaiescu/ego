@@ -30,7 +30,7 @@ jobs:
       - run:
           name: Insert Dummy Data
           command: |
-            for file in ~/repo/src/main/resources/dummy-data/*; do
+            for file in ~/repo/src/main/resources/dummy-data/*.sql; do
                 psql -d $TEST_DATABASE_URL -f "${file}"
             done
 
