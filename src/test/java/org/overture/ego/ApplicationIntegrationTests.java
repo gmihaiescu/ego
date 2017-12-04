@@ -25,7 +25,15 @@ public class ApplicationIntegrationTests {
   private TestRestTemplate restTemplate;
 
   @Test
-  public void unknownResource_response404() throws Exception {
+  public void unknownResource_noAuth_responseUnauthoruzed() throws Exception {
+    ResponseEntity<String> response = this.restTemplate.exchange("/thisisnota/real/resource", HttpMethod.GET, new HttpEntity<>(new HttpHeaders()), String.class);
+    assertThat(
+      response.getStatusCodeValue()
+    ).isEqualTo(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED);
+  }
+
+  @Test
+  public void unknownResource_auth_responseNotFound() throws Exception {
     ResponseEntity<String> response = this.restTemplate.exchange("/thisisnota/real/resource", HttpMethod.GET, new HttpEntity<>(new HttpHeaders()), String.class);
     assertThat(
       response.getStatusCodeValue()

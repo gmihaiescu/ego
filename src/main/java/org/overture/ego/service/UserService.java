@@ -48,8 +48,8 @@ public class UserService {
     Constants
    */
   // DEFAULTS
-  private final static String DEFAULT_USER_ROLE = UserRole.USER.toString();
-  private final static String DEFAULT_USER_STATUS = UserStatus.PENDING.toString();
+  private final static String DEFAULT_USER_ROLE = UserRole.USER;
+  private final static String DEFAULT_USER_STATUS = UserStatus.PENDING;
 
   // DEMO USER
   private final static String DEMO_USER_NAME = "Demo.User@example.com";
@@ -92,18 +92,18 @@ public class UserService {
     if (output != null) {
       // Force the demo user to be ADMIN and APPROVED to allow demo access,
       // even if these values have previously been modified for the demo user.
-      output.setStatus(UserStatus.APPROVED.toString());
-      output.setRole(UserRole.ADMIN.toString());
+      output.setStatus(UserStatus.APPROVED);
+      output.setRole(UserRole.ADMIN);
     } else {
       val userInfo = new User();
       userInfo.setName(DEMO_USER_NAME);
       userInfo.setEmail(DEMO_USER_EMAIL);
       userInfo.setFirstName(DEMO_FIRST_NAME);
       userInfo.setLastName(DEMO_LAST_NAME);
-      userInfo.setStatus(UserStatus.APPROVED.toString());
+      userInfo.setStatus(UserStatus.APPROVED);
       userInfo.setCreatedAt(formatter.format(new Date()));
       userInfo.setLastLogin(null);
-      userInfo.setRole(UserRole.ADMIN.toString());
+      userInfo.setRole(UserRole.ADMIN);
       output = this.create(userInfo);
     }
 

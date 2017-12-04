@@ -16,19 +16,8 @@
 
 package org.overture.ego.model.enums;
 
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor
-public enum UserRole {
-  USER("USER"),
-  ADMIN("ADMIN");
-
-  @NonNull private final String value;
-
-  @Override
-  public String toString() {
-    return value;
-  }
+public class UserRole {
+  public static final String USER = "USER";
+  public static final String ADMIN = "ADMIN";
 
 }

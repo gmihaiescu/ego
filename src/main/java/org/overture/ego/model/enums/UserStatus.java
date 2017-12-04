@@ -16,21 +16,10 @@
 
 package org.overture.ego.model.enums;
 
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor
-public enum UserStatus {
-  APPROVED("Approved"),
-  DISABLED("Disabled"),
-  PENDING("Pending"),
-  REJECTED("Rejected"),;
-
-  @NonNull private final String value;
-
-  @Override
-  public String toString() {
-    return value;
-  }
+public class UserStatus {
+  public static final String APPROVED = "Approved";
+  public static final String DISABLED = "Disabled";
+  public static final String PENDING = "Pending";
+  public static final String REJECTED = "Rejected";
 
 }
