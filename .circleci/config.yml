@@ -55,6 +55,7 @@ jobs:
             mvn test \
             -D spring.datasource.username=root \
             -D spring.datasource.url=jdbc:postgresql://localhost:5432/circle_test
+            -D spring.profiles.active=auth \
 
   deploy:
     docker:
